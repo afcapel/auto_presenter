@@ -1,3 +1,5 @@
+require "delegate"
+
 module AutoPresenter
   class RelationPresenter < SimpleDelegator
 
@@ -6,7 +8,7 @@ module AutoPresenter
     def initialize(object)
       __setobj__(object)
 
-      name = object.model.name
+      name = object.klass.name
       @_presenter = "#{name}Presenter".safe_constantize
 
       present_records if loaded?

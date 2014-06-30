@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_project
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_filter :set_project
+  before_filter :set_task, only: [:show, :edit, :update, :destroy]
 
   # POST /tasks
   def create

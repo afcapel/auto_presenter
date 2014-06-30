@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_filter :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
   def index

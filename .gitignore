@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+Gemfile.lock
 
 # Ignore the default test SQLite database.
 test/dummy/db/development.sqlite3
