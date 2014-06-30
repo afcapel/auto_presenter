@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore the default test SQLite database.
-test/dummy/db/test.sqlite3
+test/dummy/db/development.sqlite3
 
 # Ignore all logfiles and tempfiles.
 test/dummy/log
