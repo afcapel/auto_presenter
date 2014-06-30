@@ -1,0 +1,2 @@
+class ProjectPresenter < SimpleDelegator
+end

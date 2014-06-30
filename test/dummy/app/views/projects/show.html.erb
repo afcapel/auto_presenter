@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<h3>Uncompleted tasks</h3>
+
+<ul>
+  <%= render @uncompleted_tasks %>
+</ul>
+
+</hr>
+
+<h3>Completed tasks</h3>
+
+<ul>
+  <%= render @completed_tasks %>
+</ul>
+
+<%= form_for [@project, @new_task] do |f| %>
+  <%= f.hidden_field :project_id %>
+  <p>
+    <%= f.label :name, "New task" %>
+    <%= f.text_field :name %>
+    <%= f.submit "Add Task" %>
+  <p>
+<% end %>
+
+<%= link_to 'Add Task', new_task_path(project_id: @project) %> |
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

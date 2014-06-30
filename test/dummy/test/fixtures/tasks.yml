@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+design:
+  project: invoice_o_matic
+  name: Design
+  completed_at: 2014-05-17 11:27:08
+
+implementation:
+  project: invoice_o_matic
+  name: Implementation
+
+promotion:
+  project: invoice_o_matic
+  name: Promotion
