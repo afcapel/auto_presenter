@@ -10,7 +10,7 @@ rails_version = ENV["RAILS_VERSION"] || "4.1.2"
 gem "rails", rails_version
 
 gem 'sqlite3', platform: :ruby
-gem 'activerecord-jdbcmysql-adapter', platform: :jruby
+gem 'jdbc-sqlite3', platform: :jruby
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
