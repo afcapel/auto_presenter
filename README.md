@@ -10,19 +10,18 @@ AutoPresenter uses convention over configuration to remove the bolierplate code 
 Let's say you have a controller:
 
 ```ruby
-  class ProjectsController < ApplicationController
+class ProjectsController < ApplicationController
 
-    def show
-      @project = Project.find(params[:id])
+  def show
+    @project = Project.find(params[:id])
 
-      @completed_tasks   = @project.tasks.completed
-      @uncompleted_tasks = @project.tasks.uncompleted
-    end
+    @completed_tasks   = @project.tasks.completed
+    @uncompleted_tasks = @project.tasks.uncompleted
   end
 end
 ```
 
-To decorate the `@completed_tasks` instance variable just create a presenter in `app/presenters/projects/completed_tasks_presenter.rb`. If you want to decorate any `Task` instance variable in your controller just create a `TaskPresenter` in  `app/presenters/task_presenter.rb`. No need to change your controller code.
+To decorate `@completed_tasks` just create a presenter in `app/presenters/projects/completed_tasks_presenter.rb`. If you want to decorate any `Task` instance variable in your views just create a `TaskPresenter` in `app/presenters/task_presenter.rb`. There is no need to change your controller code.
 
 
 ### Presenters
@@ -32,6 +31,7 @@ Autopresenter doesn't ship with any base presenter class you can inherit from. A
 ```ruby
 class TaskPresenter < SimpleDelegator
 
+  # This method will be added to Task objects in the views.
   def status
     completed_at.present? ? 'Completed' : 'Uncompleted'
   end
